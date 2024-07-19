@@ -19,14 +19,20 @@ It helps to be set-up before the session.
 
 ## Setup
 
+### 1. Get the Slides or a Video Presentation
 
-### 1. Download this Repository
+If you need to download the slides, you'll find them in the file **Intro to RAG Workshop.pdf**
+If you would like to follow along with a live teaching of this course, see this video link: 
+
+https://www.youtube.com/watch?v=OxhwZ6wr1n8
+
+### 2. Download this Repository
 
 Download this repository to your device.
 Open the root folder for the project in whatever IDE you usually use.
 
 
-### 2. Get an Open AI Account
+### 3. Get an Open AI Account
 
 We'll need OpenAI to create Embeddings and complete LLM calls to generate answers.
 
@@ -45,7 +51,7 @@ https://platform.openai.com/playground?mode=chat.
 Can you enter a chat question in the 'User' field, press submit and get a reply?
 
 
-### 2. Get an OpenAI API Key
+### 4. Get an OpenAI API Key
 
 
 Find your OpenAI API Key at https://platform.openai.com/api-keys. You'll likely need to create a new one
@@ -57,7 +63,7 @@ your OPENAI_API_KEY
     OPENAI_API_KEY=<<your-api_key>>
 
 
-### 3. Get a Pinecone Account and API Key
+### 5. Get a Pinecone Account and API Key
 
 We will use Pinecone as our Vector DB.
 
@@ -68,10 +74,10 @@ Edit the .env file to include you PINECONE_API_KEY
 
     PINECONE_API_KEY=<<your-api_key>>
 
-### 4. Set up you Virtual Environment and Packages
+### 6. Set up you Virtual Environment and Packages
 Follow the instructions using `venv` or `conda` to set up the Virtual Environment or do it the way you would normally.
 
-#### 4.1 Using venv
+#### 6.1 Using venv
 Within the root directory, set up a Python Venv, you will need Python 3.8 or greater. 
 If you are on a lower python version you will need to upgrade.
 Follow these instructions to set up the Virtual Environment  or do it the way you would normally.
@@ -92,7 +98,7 @@ Again, from the terminal, install the packages:
 
     pip install pinecone-client openai python-dotenv
 
-#### 4.2 Using conda
+#### 6.2 Using conda
 From within the project folder create a new `conda` environment using the provided `environment.yaml` file. On the terminal:
 
     conda env create -f environment.yaml
@@ -101,7 +107,7 @@ then activate the environment using the command
 
     conda activate rag-workshop   
 
-### 5. Check it all works
+### 7. Check it all works
 
 Go and run the code **verify_setup.py** located in this (the root) directory.
 
