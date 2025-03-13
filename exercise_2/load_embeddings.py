@@ -17,8 +17,7 @@ load_dotenv()
 # This call works becasue you OPENAI_API_KEY has been loaded
 # And openai fetch it unless you explicitly define an api key in the call
 oa = OpenAI(api_key=os.getenv('OPENAI_API_KEY_NEW'))
-pc = Pinecone(api_key = '00b3b11d-0511-417e-b657-f37549732061')
-#pc = Pinecone(api_key=os.getenv('PINECONE_API_KEY'))
+pc = Pinecone(api_key=os.getenv('PINECONE_API_KEY'))
 
 
 # These are the questions we're uploading

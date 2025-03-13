@@ -11,7 +11,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 load_dotenv()
 
 oa = OpenAI(api_key=os.getenv('OPENAI_API_KEY_NEW'))
-pc = Pinecone(api_key = '00b3b11d-0511-417e-b657-f37549732061')
+pc = Pinecone(api_key=os.getenv('PINECONE_API_KEY'))
 index_name = 'proofs'
 
 # We'll use this function to embed the chunk

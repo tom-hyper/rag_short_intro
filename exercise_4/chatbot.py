@@ -8,7 +8,7 @@ import os
 load_dotenv()
 
 oa = OpenAI(api_key=os.getenv('OPENAI_API_KEY_NEW'))
-pc = Pinecone(api_key = '00b3b11d-0511-417e-b657-f37549732061')
+pc = Pinecone(api_key=os.getenv('PINECONE_API_KEY'))
 
 # In this function we will create the system message and include the relevant context
 # TODO Find the system message instruction you came up with in Exercise 1
