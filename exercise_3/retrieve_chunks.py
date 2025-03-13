@@ -10,8 +10,8 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 load_dotenv()
 
-oa = OpenAI()
-pc = Pinecone(api_key=os.getenv('PINECONE_API_KEY'))
+oa = OpenAI(api_key=os.getenv('OPENAI_API_KEY_NEW'))
+pc = Pinecone(api_key = '00b3b11d-0511-417e-b657-f37549732061')
 index_name = 'proofs'
 
 # We'll use this to embed the question for query
@@ -59,7 +59,7 @@ def retrieve_chunks(query, no_of_chunks=5):
 
 # TODO have a go at some experimental queries
 # are the results relevant?
-chunks = retrieve_chunks('If the earth is not curved, why can only the top half of a ship be seen at a distance?')
+chunks = retrieve_chunks('Has the Smithsonian Institute embraced Flat Earth theory?')
 print(chunks)
 
 

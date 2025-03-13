@@ -10,8 +10,8 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 load_dotenv()
 
-oa = OpenAI()
-pc = Pinecone(api_key=os.getenv('PINECONE_API_KEY'))
+oa = OpenAI(api_key=os.getenv('OPENAI_API_KEY_NEW'))
+pc = Pinecone(api_key = '00b3b11d-0511-417e-b657-f37549732061')
 index_name = 'proofs'
 
 # We'll use this function to embed the chunk
@@ -61,7 +61,7 @@ def upsert_chunks_from(text_file):
 
         text = file.read()
 
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=x, chunk_overlap=y)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1500, chunk_overlap=150)
     chunks = text_splitter.split_text(text)
 
     for i, chunk in enumerate(chunks):
@@ -85,7 +85,7 @@ def upsert_chunks_from(text_file):
 # Depending on how your IDE runs the code you may need to
 # change 'flat_earth.txt' to 'exercise_3/flat_earth.txt'
 create_index(index_name)
-upsert_chunks_from('flat_earth.txt')
+upsert_chunks_from('exercise_3/flat_earth.txt')
 
 
 

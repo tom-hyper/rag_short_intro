@@ -2,3 +2,5 @@
 .idea/
 .idea
 .env_hidden
+venv/
+venv\

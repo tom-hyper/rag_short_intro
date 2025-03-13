@@ -1,8 +1,10 @@
 import os
 from dotenv import load_dotenv
 from pinecone import Pinecone, ServerlessSpec
-from openai import OpenAI
+from openai import OpenAI 
 
+
+#openai.api_key = os.getenv("OPENAI_API_KEY_NEW")
 
 # We're loading env variables with dotenv
 # Store your env variable in .env for
@@ -14,8 +16,9 @@ load_dotenv()
 
 # This call works becasue you OPENAI_API_KEY has been loaded
 # And openai fetch it unless you explicitly define an api key in the call
-oa = OpenAI() # could be OpenAI(api_key=os.getenv('OPENAI_API_KEY')
-pc = Pinecone(api_key=os.getenv('PINECONE_API_KEY'))
+oa = OpenAI(api_key=os.getenv('OPENAI_API_KEY_NEW'))
+pc = Pinecone(api_key = '00b3b11d-0511-417e-b657-f37549732061')
+#pc = Pinecone(api_key=os.getenv('PINECONE_API_KEY'))
 
 
 # These are the questions we're uploading
@@ -47,7 +50,7 @@ def create_index():
     # TODO Update the dimensions to reflect the number of vectors in OpenAI embedding model
     pc.create_index(
         name='questions',
-        dimension=x, # How many dimensions?
+        dimension=1536, # How many dimensions?
         metric='cosine',
         spec=ServerlessSpec(
             cloud='aws',
@@ -74,7 +77,7 @@ def get_embedding_for(text):
     return response.data[0].embedding
 
 
-# Function to upload vectors and associated question data
+# Function to uplopenaid vectors and associated question data
 def load_questions():
 
     index = pc.Index('questions')
@@ -110,7 +113,7 @@ get_embedding_for('How do I get a taxi in Boston?')
 
 
 # TODO Uncomment these function calls and run this code to load data
-#create_index()
-#load_questions()
+create_index()
+load_questions()
 
 

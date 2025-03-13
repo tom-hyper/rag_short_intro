@@ -49,6 +49,10 @@ between the **user** and **assistant** (this is the APIs term for the LLM)
 In this file **flat_earth_extract.txt**, there is an extract of a number 
 of 'proofs' that are relevant for answering the question:
 
+
+
+System Prompt: You are a chatbot who's purpose is to answer questions about flat earth theories. Use the following context as your only source of evidence:
+
 >"If the earth is flat, why does only the top half of a ship appear when it is at a distance?"
 
 Use the **System Message** instruction to inform ChatGPT what 
